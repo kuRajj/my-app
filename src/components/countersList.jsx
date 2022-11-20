@@ -20,7 +20,8 @@ const CountersList = () => {
   const handleIncrement = (id) => {
     const newCount = counters.map((count) => {
       if (id === count.id) {
-        count.value += 1;
+        const newItems = { ...count, value: count.value + 1 };
+        return newItems;
       }
       return count;
     });
@@ -30,7 +31,8 @@ const CountersList = () => {
   const handleDecrement = (id) => {
     const newCount = counters.map((count) => {
       if (id === count.id) {
-        count.value -= 1;
+        const newItems = { ...count, value: count.value - 1 };
+        return newItems;
       }
       return count;
     });
